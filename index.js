@@ -25,6 +25,8 @@ addBookToLibrary("The Way of Zen", "Alan Watts", 256, "Explores Zen’s origins,
 console.log(myLibrary);
 
 
+//***************************************
+// Test function that loops through array
 function displayBookTest(){
 myLibrary.forEach(book => {
   console.log(`Title: ${book.title} 
@@ -35,7 +37,19 @@ Read: ${book.read}
 ID: ${book.id}`);
 });
 }
-
 displayBookTest();
+//****************************************
 
+function displayBook(){
+  myLibrary.forEach(book => {
+    const container = document.getElementById("#container")
+    const div = document.createElement("p");
+    div.textContent = book.title;
+    container.appendChild(div);
+
+    
+
+  })
+}
+displayBook();
 
