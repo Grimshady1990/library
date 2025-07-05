@@ -1,24 +1,25 @@
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+function Book(title, author, pages, description, read) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.description = description;
+  this.read = read;
+  this.id = crypto.randomUUID();
 }
-
-let raisingSteam = new Book("Raising Steam", "Terry Prachet", 389, true);
-
 
 function addBookToLibrary(addTitle, addAuthor, addPages, addRead) {
   this.addBook = new Book(addTitle, addAuthor, addPages, addRead);
   myLibrary.push(this.addBook);
-
 }
 
-addBookToLibrary("Test title", "test author", 687, false);
-addBookToLibrary("Test title", "test author", 687, false);
-addBookToLibrary("Test title", "test author", 687, false);
-addBookToLibrary("Test title", "test author", 687, false);
+addBookToLibrary("Journeys Out of the Body", "Robert Monroe", 288, "Groundbreaking account of Monroe’s out-of-body experiences and consciousness exploration.", true);
+
+addBookToLibrary("Raising Steam", "Terry Pratchett", 384, "Moist von Lipwig tackles industrial revolution on Discworld with steam locomotive.", true);
+
+addBookToLibrary("The 5 AM Club", "Robin Sharma", 336, "routine to maximize productivity by waking at 5 AM for growth and discipline.", true);
+
+
+addBookToLibrary("The Way of Zen", "Alan Watts", 256, "Explores Zen’s origins, principles, and practices in a clear, modern voice.", false);
 console.log(myLibrary);
