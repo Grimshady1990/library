@@ -9,9 +9,9 @@ function Book(title, author, pages, description, read) {
   this.id = crypto.randomUUID();
 }
 
-function addBookToLibrary(addTitle, addAuthor, addPages, addRead) {
-  this.addBook = new Book(addTitle, addAuthor, addPages, addRead);
-  myLibrary.push(this.addBook);
+function addBookToLibrary(addTitle, addAuthor, addPages, addDescription, addRead) {
+  this.title = new Book(addTitle, addAuthor, addPages, addDescription, addRead);
+  myLibrary.push(this.title);
 }
 
 addBookToLibrary("Journeys Out of the Body", "Robert Monroe", 288, "Groundbreaking account of Monroe’s out-of-body experiences and consciousness exploration.", true);
@@ -23,3 +23,19 @@ addBookToLibrary("The 5 AM Club", "Robin Sharma", 336, "routine to maximize prod
 
 addBookToLibrary("The Way of Zen", "Alan Watts", 256, "Explores Zen’s origins, principles, and practices in a clear, modern voice.", false);
 console.log(myLibrary);
+
+
+function displayBookTest(){
+myLibrary.forEach(book => {
+  console.log(`Title: ${book.title} 
+Author: ${book.author}
+Page Count: ${book.pages}
+Description: ${book.description}
+Read: ${book.read}
+ID: ${book.id}`);
+});
+}
+
+displayBookTest();
+
+
