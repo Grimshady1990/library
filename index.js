@@ -22,6 +22,15 @@ addBookToLibrary("The 5 AM Club", "Robin Sharma", 336, "routine to maximize prod
 
 
 addBookToLibrary("The Way of Zen", "Alan Watts", 256, "Explores Zen’s origins, principles, and practices in a clear, modern voice.", false);
+
+addBookToLibrary("Journeys Out of the Body", "Robert Monroe", 288, "Groundbreaking account of Monroe’s out-of-body experiences and consciousness exploration.", true);
+
+addBookToLibrary("Raising Steam", "Terry Pratchett", 384, "Moist von Lipwig tackles industrial revolution on Discworld with steam locomotive.", true);
+
+addBookToLibrary("The 5 AM Club", "Robin Sharma", 336, "routine to maximize productivity by waking at 5 AM for growth and discipline.", true);
+
+
+addBookToLibrary("The Way of Zen", "Alan Watts", 256, "Explores Zen’s origins, principles, and practices in a clear, modern voice.", false);
 console.log(myLibrary);
 
 
@@ -44,7 +53,8 @@ function displayBook(){
   myLibrary.forEach(book => {
 
     // This div is the main container for all the "display" variables
-    const frontCover = document.createElement("div");
+    const mainContainer = document.querySelector("#grid-container");
+    const frontCover = document.createElement("div")
     // **************************************************************
 
     const displayTitle = document.createElement("div");
@@ -61,7 +71,17 @@ function displayBook(){
     displayDescription.textContent = `Description: ${book.description}`;
     displayId.textContent = `ID: ${book.id}`;
 
-    document.body.appendChild(frontCover);
+    frontCover.setAttribute("id", "front-cover");
+
+    displayTitle.classList.add("cover-content");
+    displayAuthor.classList.add("cover-content");
+    displayPage.classList.add("cover-content");
+    displayRead.classList.add("cover-content");
+    displayDescription.classList.add("cover-content");
+    displayId.classList.add("cover-content");
+
+    document.body.appendChild(mainContainer);
+    mainContainer.appendChild(frontCover);
     frontCover.appendChild(displayTitle);
     frontCover.appendChild(displayAuthor);
     frontCover.appendChild(displayPage);

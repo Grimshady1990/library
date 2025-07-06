@@ -1,0 +1,23 @@
+.cover-content {
+    
+    background-color: green;
+    display: flex;
+    flex-grow: 1;
+    margin: 20px;
+    
+}
+
+#grid-container {
+    display: grid;
+    border: 10px solid blue;
+    margin: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    
+}
+
+#front-cover {
+    height: 300px;
+    background-color: green;
+}
