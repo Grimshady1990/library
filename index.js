@@ -4,6 +4,13 @@ let newEntries = [];
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("#add-book");
 const closeButton = document.querySelector("#submit-btn");
+const deleteButton = document.getElementById("delete-button");
+
+
+
+
+
+
 
 showButton.addEventListener("click", () => {
   dialog.showModal();
@@ -123,6 +130,7 @@ function displayBook(){
     frontCover.appendChild(displayId);
     frontCover.appendChild(displayDelete);
   })
+  
 }
 
 function displayNewBook(){
@@ -180,6 +188,15 @@ function displayNewBook(){
 
 
 
+
+
+
 displayBook();
+
+deleteButton.addEventListener("click", () => {
+  deleteButton.parentElement.remove("front-cover");
+});
+
+
 
 
