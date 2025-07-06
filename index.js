@@ -42,14 +42,33 @@ displayBookTest();
 
 function displayBook(){
   myLibrary.forEach(book => {
-    const container = document.getElementById("#container")
-    const div = document.createElement("p");
-    div.textContent = book.title;
-    container.appendChild(div);
 
-    
+    // This div is the main container for all the "display" variables
+    const frontCover = document.createElement("div");
+    // **************************************************************
 
+    const displayTitle = document.createElement("div");
+    const displayAuthor = document.createElement("div");
+    const displayPage = document.createElement("div");
+    const displayRead = document.createElement("div");
+    const displayDescription = document.createElement("div");
+    const displayId = document.createElement("div");
+
+    displayTitle.textContent = `Title: ${book.title}`;
+    displayAuthor.textContent = `Author: ${book.author}`;
+    displayPage.textContent = `Page Count: ${book.pages}`;
+    displayRead.textContent = `Read: ${book.read}`;
+    displayDescription.textContent = `Description: ${book.description}`;
+    displayId.textContent = `ID: ${book.id}`;
+
+    document.body.appendChild(frontCover);
+    frontCover.appendChild(displayTitle);
+    frontCover.appendChild(displayAuthor);
+    frontCover.appendChild(displayPage);
+    frontCover.appendChild(displayRead);
+    frontCover.appendChild(displayDescription);
+    frontCover.appendChild(displayId);
   })
 }
-displayBook();
+console.log(displayBook());
 
