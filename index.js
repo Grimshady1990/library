@@ -1,5 +1,5 @@
 const myLibrary = [];
-const newEntries = [];
+let newEntries = [];
 
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("#add-book");
@@ -13,7 +13,7 @@ closeButton.addEventListener("click", () => {
   
   event.preventDefault();
   dialog.close();
-
+  
   const inputTitle = document.querySelector("#form_title");
   const valueTitle = inputTitle.value;
   const inputAuthor = document.querySelector("#form_author");
@@ -26,6 +26,7 @@ closeButton.addEventListener("click", () => {
   const valueRead = inputRead.value;
   addNewBookToLibrary(valueTitle, valueAuthor, valuePages, valueDesc, valueRead)
   displayNewBook();
+  newEntries=[];
   console.log(newEntries)
   
 });
@@ -122,6 +123,8 @@ function displayBook(){
 function displayNewBook(){
 
     newEntries.forEach(book => {
+
+  
   
 
     // This div is the main container for all the "display" variables
@@ -160,8 +163,10 @@ function displayNewBook(){
     frontCover.appendChild(displayRead);
     frontCover.appendChild(displayDescription);
     frontCover.appendChild(displayId);
+    
   });
-  }
+}
+  
 
 
 
