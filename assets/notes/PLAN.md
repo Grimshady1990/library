@@ -33,3 +33,7 @@ The form needs the following inputs
 
 For now i will get to work on this and when I reach a hurdle I will be back to plan some more.
 
+### Display User Submissions
+
+We have the form up and running with dialog and modal and everything is working as expected. Next we have to figure out how to get that information and add it to our library 
+
