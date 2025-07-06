@@ -92,6 +92,8 @@ function displayBook(){
     const displayRead = document.createElement("div");
     const displayDescription = document.createElement("div");
     const displayId = document.createElement("div");
+    const displayDelete = document.createElement("button");
+    displayDelete.setAttribute("id", "delete-button");
 
     displayTitle.textContent = `Title: ${book.title}`;
     displayAuthor.textContent = `Author: ${book.author}`;
@@ -99,6 +101,7 @@ function displayBook(){
     displayRead.textContent = `Read: ${book.read}`;
     displayDescription.textContent = `Description: ${book.description}`;
     displayId.textContent = `ID: ${book.id}`;
+    displayDelete.textContent = "Delete"
 
     frontCover.setAttribute("id", "front-cover");
 
@@ -108,6 +111,7 @@ function displayBook(){
     displayRead.classList.add("cover-content");
     displayDescription.classList.add("cover-content");
     displayId.classList.add("cover-content");
+    displayDelete.classList.add("cover-content");
 
     document.body.appendChild(mainContainer);
     mainContainer.appendChild(frontCover);
@@ -117,6 +121,7 @@ function displayBook(){
     frontCover.appendChild(displayRead);
     frontCover.appendChild(displayDescription);
     frontCover.appendChild(displayId);
+    frontCover.appendChild(displayDelete);
   })
 }
 
@@ -138,6 +143,8 @@ function displayNewBook(){
     const displayRead = document.createElement("div");
     const displayDescription = document.createElement("div");
     const displayId = document.createElement("div");
+    const displayDelete = document.createElement("button");
+    displayDelete.setAttribute("id", "delete-button");
 
     displayTitle.textContent = `Title: ${book.title}`;
     displayAuthor.textContent = `Author: ${book.author}`;
@@ -145,6 +152,7 @@ function displayNewBook(){
     displayRead.textContent = `Read: ${book.read}`;
     displayDescription.textContent = `Description: ${book.description}`;
     displayId.textContent = `ID: ${book.id}`;
+    displayDelete.textContent = "Delete"
 
     frontCover.setAttribute("id", "front-cover");
 
@@ -163,6 +171,8 @@ function displayNewBook(){
     frontCover.appendChild(displayRead);
     frontCover.appendChild(displayDescription);
     frontCover.appendChild(displayId);
+    frontCover.appendChild(displayDelete);
+    displayDelete.classList.add("cover-content");
     
   });
 }
