@@ -21,3 +21,9 @@
     height: 300px;
     background-color: green;
 }
+
+#book-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

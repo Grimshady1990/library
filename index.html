@@ -10,8 +10,23 @@
 <body>
 
     <div id="grid-container">
-        
+
     </div>
+
+    <form id="book-form" action="https://httpbin.org/post" method="post">
+        <label for="form_title">Title:</label>
+        <input type="text" id="form_title">
+        <label for="form_author">Author:</label>
+        <input type="text" id="form_author">
+        <label for="form_pages">Page Count:</label>
+        <input type="number" id="form_pages">
+        <label for="form_description">Description:</label>
+        <textarea name="form_description" id="form_description" rows="10" cols="30"></textarea>
+        <label for="form_read">Read?</label>
+        <input type="checkbox" id="Read" name="form_read">
+        <label for="form_image">Book Cover:</label>
+        <input type="file" name="form_image" id="form_image">
+    </form>
 
     <script src="index.js"></script>
 </body>
