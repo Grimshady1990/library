@@ -4,7 +4,7 @@ let newEntries = [];
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("#add-book");
 const closeButton = document.querySelector("#submit-btn");
-const deleteButton = document.getElementById("delete-button");
+
 
 
 
@@ -184,7 +184,12 @@ function displayNewBook(){
     
   });
 }
-  
+
+function reveBook() {
+  const reveBook = document.querySelector("#front-cover");
+  reveBook.remove();
+}
+
 
 
 
@@ -192,10 +197,16 @@ function displayNewBook(){
 
 
 displayBook();
-
+const deleteButton = document.querySelector("#delete-button");
 deleteButton.addEventListener("click", () => {
-  deleteButton.parentElement.remove("front-cover");
+  reveBook();
+  
+
 });
+
+
+
+
 
 
 

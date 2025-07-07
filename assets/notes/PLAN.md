@@ -35,5 +35,17 @@ For now i will get to work on this and when I reach a hurdle I will be back to p
 
 ### Display User Submissions
 
-We have the form up and running with dialog and modal and everything is working as expected. Next we have to figure out how to get that information and add it to our library 
+We have the form up and running with dialog and modal and everything is working as expected. Next we have to figure out how to get that information and add it to our library
+
+### Step 2
+
+now we have the form working exactly as the spec requires our next challenge is to get the delete button to delete the entire book it is a sibling off 
+
+## Identifying which book to delete
+
+I'm gonna be straight on this I have no idea how to tackle this one. All I have is we can use data-attribute on the unique id to correctly identify the book but how to make use of this is a different story.
+
+### Learn more about data-attributes
+
+Since this is the first time I have heard of data-attributes it might be worth watching some videos and reading some articles about it, so lets do that first. 
 
