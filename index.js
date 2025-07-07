@@ -80,7 +80,7 @@ Read: ${book.read}
 ID: ${book.id}`);
 });
 }
-displayBookTest();
+
 //****************************************
 
 function displayBook(){
@@ -96,16 +96,22 @@ function displayBook(){
     const displayTitle = document.createElement("div");
     const displayAuthor = document.createElement("div");
     const displayPage = document.createElement("div");
-    const displayRead = document.createElement("div");
+    
     const displayDescription = document.createElement("div");
     const displayId = document.createElement("div");
+    const readText = document.createElement("div");
+    const readLabel = document.createElement("label");
+    const displayRead = document.createElement("input");
+    const readSpan = document.createElement("span");
     const displayDelete = document.createElement("button");
     displayDelete.setAttribute("id", "delete-button");
+    displayDelete.setAttribute("data-id", `${book.id}`);
+    frontCover.setAttribute("data-id", `${book.id}`);
 
     displayTitle.textContent = `Title: ${book.title}`;
     displayAuthor.textContent = `Author: ${book.author}`;
     displayPage.textContent = `Page Count: ${book.pages}`;
-    displayRead.textContent = `Read: ${book.read}`;
+    readText.textContent = "Read?"
     displayDescription.textContent = `Description: ${book.description}`;
     displayId.textContent = `ID: ${book.id}`;
     displayDelete.textContent = "Delete"
@@ -119,16 +125,31 @@ function displayBook(){
     displayDescription.classList.add("cover-content");
     displayId.classList.add("cover-content");
     displayDelete.classList.add("cover-content");
+    displayRead.setAttribute("type", "checkbox");
+    readLabel.classList.add("switch");
+    readSpan.classList.add("slider", "round")
 
     document.body.appendChild(mainContainer);
     mainContainer.appendChild(frontCover);
     frontCover.appendChild(displayTitle);
     frontCover.appendChild(displayAuthor);
     frontCover.appendChild(displayPage);
-    frontCover.appendChild(displayRead);
+    
     frontCover.appendChild(displayDescription);
     frontCover.appendChild(displayId);
+
+    frontCover.appendChild(readText);
+    frontCover.appendChild(readLabel);
+    readLabel.appendChild(displayRead);
+    readLabel.appendChild(readSpan);
     frontCover.appendChild(displayDelete);
+
+    displayDelete.addEventListener("click", () => {
+      if (displayDelete.DOMStringMap === frontCover.DOMStringMap){
+        frontCover.remove();
+      }
+});
+    
   })
   
 }
@@ -148,18 +169,28 @@ function displayNewBook(){
     const displayTitle = document.createElement("div");
     const displayAuthor = document.createElement("div");
     const displayPage = document.createElement("div");
-    const displayRead = document.createElement("div");
+    
     const displayDescription = document.createElement("div");
     const displayId = document.createElement("div");
+    const readText = document.createElement("div");
+    const readLabel = document.createElement("label");
+    const displayRead = document.createElement("input");
+    const readSpan = document.createElement("span");
     const displayDelete = document.createElement("button");
     displayDelete.setAttribute("id", "delete-button");
+    displayDelete.setAttribute("data-id", `${book.id}`);
+    frontCover.setAttribute("data-id", `${book.id}`);
+    displayRead.setAttribute("type", "checkbox");
+    readLabel.classList.add("switch");
+    readSpan.classList.add("slider", "round")
 
     displayTitle.textContent = `Title: ${book.title}`;
     displayAuthor.textContent = `Author: ${book.author}`;
     displayPage.textContent = `Page Count: ${book.pages}`;
-    displayRead.textContent = `Read: ${book.read}`;
+    
     displayDescription.textContent = `Description: ${book.description}`;
     displayId.textContent = `ID: ${book.id}`;
+    readText.textContent = "Read?"
     displayDelete.textContent = "Delete"
 
     frontCover.setAttribute("id", "front-cover");
@@ -174,35 +205,42 @@ function displayNewBook(){
     document.body.appendChild(mainContainer);
     mainContainer.appendChild(frontCover);
     frontCover.appendChild(displayTitle);
+    
     frontCover.appendChild(displayAuthor);
     frontCover.appendChild(displayPage);
-    frontCover.appendChild(displayRead);
+    
     frontCover.appendChild(displayDescription);
     frontCover.appendChild(displayId);
+    frontCover.appendChild(readText);
+    frontCover.appendChild(readLabel);
+    readLabel.appendChild(displayRead);
+    readLabel.appendChild(readSpan);
     frontCover.appendChild(displayDelete);
     displayDelete.classList.add("cover-content");
-    
+    console.log(displayDelete.dataset);
+    console.log(frontCover.dataset);
+    console.log(displayDelete.DOMStringMap === frontCover.DOMStringMap);
+
+    displayDelete.addEventListener("click", () => {
+      if (displayDelete.DOMStringMap === frontCover.DOMStringMap){
+        frontCover.remove();
+      }
+});
+
+
   });
+
 }
-
-function reveBook() {
-  const reveBook = document.querySelector("#front-cover");
-  reveBook.remove();
-}
-
-
-
-
 
 
 
 displayBook();
-const deleteButton = document.querySelector("#delete-button");
-deleteButton.addEventListener("click", () => {
-  reveBook();
+
+
+
   
 
-});
+  
 
 
 
