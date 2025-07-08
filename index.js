@@ -88,6 +88,7 @@ function displayBook(){
 }
 
 
+
 let newEntries = [];
 
 const dialog = document.querySelector("dialog");
@@ -98,7 +99,9 @@ showButton.addEventListener("click", () => {
   dialog.showModal();
 });
 
-closeButton.addEventListener("click", () => {
+
+closeButton.addEventListener("click", (event) => {
+
   event.preventDefault();
   dialog.close();
   
@@ -110,13 +113,13 @@ closeButton.addEventListener("click", () => {
   const valuePages = inputPages.value;
   const inputDesc = document.querySelector("#form_description");
   const valueDesc = inputDesc.value;
-  const inputRead = document.querySelector("#form_read");
-  const valueRead = inputRead.value;
+  
 
-  addNewBookToLibrary(valueTitle, valueAuthor, valuePages, valueDesc, valueRead);
+  addNewBookToLibrary(valueTitle, valueAuthor, valuePages, valueDesc,);
   displayNewBook();
   newEntries=[];
 });
+
 
 function addNewBookToLibrary(addTitle, addAuthor, addPages, addDescription, addRead) {
   this.title = new Book(addTitle, addAuthor, addPages, addDescription, addRead);
