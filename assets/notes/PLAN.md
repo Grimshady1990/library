@@ -37,7 +37,7 @@ For now i will get to work on this and when I reach a hurdle I will be back to p
 
 We have the form up and running with dialog and modal and everything is working as expected. Next we have to figure out how to get that information and add it to our library
 
-### Step 2
+# Step 2
 
 now we have the form working exactly as the spec requires our next challenge is to get the delete button to delete the entire book it is a sibling off 
 
@@ -48,4 +48,31 @@ I'm gonna be straight on this I have no idea how to tackle this one. All I have 
 ### Learn more about data-attributes
 
 Since this is the first time I have heard of data-attributes it might be worth watching some videos and reading some articles about it, so lets do that first. 
+
+
+### Job Done!
+
+Okay i worked out the data-attribute problem and made it possible to delete any book I also added the toggle switch. On paper this project is finish but Im not happy with that idea.
+
+# Step 3
+
+now the assignment is complete its time to start my own work starting with a code clean up and a better understanding of what I have created.
+
+# Step 4 
+
+Code is all cleaned Im a little sad that my data-id attribute that I was using on the delete function does absolutely nothing. The good news is my delete function works.
+
+Anyhoo, the next step will consist of tasks being logged to pomofocus.io
+
+## Commit Commit Commit
+
+Experience has taught me that when I am checking off tasks using pomofocus its very easy to forget to commit and you can quickly end up with a lot of changes to explain. So now every time a task is ticked off in pomofocus a commit must be made. This is non-negotiable.
+
+## Bounty Hunter
+
+This is always my favorite part of the project. The mission is to click scroll drop and roll and try to think of all the little improvements that need to be made. 
+
+### Important 
+
+These improvements should only be functional don't worry about color and style just yet, first fix functional issues
 
