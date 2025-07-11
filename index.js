@@ -121,8 +121,14 @@ closeButton.addEventListener("click", (event) => {
   addNewBookToLibrary(valueTitle, valueAuthor, valuePages, valueDesc,);
   displayNewBook();
   newEntries=[];
+  resetForm();
+  
 });
 
+function resetForm() {
+  const reset = document.querySelector("#book-form");
+  reset.reset();
+}
 
 function addNewBookToLibrary(addTitle, addAuthor, addPages, addDescription, addRead) {
   this.title = new Book(addTitle, addAuthor, addPages, addDescription, addRead);
