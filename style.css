@@ -333,10 +333,12 @@ dialog::backdrop {
   }
 
   dialog {
+
+  position: fixed;
   animation: fade-out 0.7s ease-out;
   
-  top: 75%;
-  left:68%;
+  top: 50%;
+  left:50%;
   
   background-color: var(--body-bg-color);
   padding: 50px 50px;
