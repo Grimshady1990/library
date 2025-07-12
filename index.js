@@ -50,8 +50,8 @@ function Book(title, author, pages, description, read) {
   this.id = crypto.randomUUID();
 }
 
-function addBookToLibrary(addTitle, addAuthor, addPages, addDescription) {
-  this.title = new Book(addTitle, addAuthor, addPages, addDescription,);
+function addBookToLibrary(addTitle, addAuthor, addPages, addDescription, addRead) {
+  this.title = new Book(addTitle, addAuthor, addPages, addDescription, addRead);
   myLibrary.push(this.title);
 }
 
@@ -60,13 +60,13 @@ function addNewBookToLibrary(addTitle, addAuthor, addPages, addDescription, addR
   newEntries.push(this.title);
 }
 
-addBookToLibrary("Journeys Out of the Body", "Robert Monroe", 288, "Groundbreaking account of Monroe’s out-of-body experiences and consciousness exploration.");
+addBookToLibrary("Journeys Out of the Body", "Robert Monroe", 288, "Groundbreaking account of Monroe’s out-of-body experiences and consciousness exploration.", "yes");
 
-addBookToLibrary("Raising Steam", "Terry Pratchett", 384, "Moist von Lipwig tackles industrial revolution on Discworld with steam locomotive.");
+addBookToLibrary("Raising Steam", "Terry Pratchett", 384, "Moist von Lipwig tackles industrial revolution on Discworld with steam locomotive.", "no");
 
-addBookToLibrary("The 5 AM Club", "Robin Sharma", 336, "routine to maximize productivity by waking at 5 AM for growth and discipline.");
+addBookToLibrary("The 5 AM Club", "Robin Sharma", 336, "routine to maximize productivity by waking at 5 AM for growth and discipline.", "no");
 
-addBookToLibrary("The Way of Zen", "Alan Watts", 256, "Explores Zen’s origins, principles, and practices in a clear, modern voice.");
+addBookToLibrary("The Way of Zen", "Alan Watts", 256, "Explores Zen’s origins, principles, and practices in a clear, modern voice.", "yes");
 
 console.log(myLibrary);
 
@@ -91,10 +91,12 @@ function displayBook(){
   myLibrary.forEach(book => {
   
 
-    // This div is the main container for all the "display" variables
+// This div is the main container for all the "display" variables
     const mainContainer = document.querySelector("#grid-container");
     const frontCover = document.createElement("div")
     // **************************************************************
+
+    
 
     const displayTitle = document.createElement("div");
     const displayAuthor = document.createElement("div");
@@ -102,9 +104,7 @@ function displayBook(){
     const displayDescription = document.createElement("div");
     const displayId = document.createElement("div");
     
-    const readLabel = document.createElement("label");
-    const displayRead = document.createElement("input");
-    const readSpan = document.createElement("span");
+    
     const displayDelete = document.createElement("button");
     const readDelete = document.createElement("div")
 
@@ -123,13 +123,11 @@ function displayBook(){
     displayTitle.classList.add("cover-content");
     displayAuthor.classList.add("cover-content");
     displayPage.classList.add("cover-content");
-    displayRead.classList.add("cover-content");
+    
     displayDescription.classList.add("cover-content");
     displayId.classList.add("cover-content");
     
-    displayRead.setAttribute("type", "checkbox");
-    readLabel.classList.add("switch-yes");
-    readSpan.classList.add("slider-yes", "round-yes")
+    
     readDelete.setAttribute("id", "read-delete")
 
     document.body.appendChild(mainContainer);
@@ -140,11 +138,39 @@ function displayBook(){
     frontCover.appendChild(displayDescription);
     frontCover.appendChild(displayId);
     frontCover.appendChild(readDelete);
-    readDelete.appendChild(readLabel);
-    readLabel.appendChild(displayRead);
-    readLabel.appendChild(readSpan);
-    readDelete.appendChild(displayDelete);
     
+   
+    
+
+    if (book.read === "yes") {
+      const readLabel = document.createElement("label");
+      const displayRead = document.createElement("input");
+      const readSpan = document.createElement("span");
+      displayRead.classList.add("cover-content");
+      displayRead.setAttribute("type", "checkbox");
+      readLabel.classList.add("switch-yes");
+      readSpan.classList.add("slider-yes", "round-yes")
+      readDelete.appendChild(readLabel);
+      readLabel.appendChild(displayRead);
+      readLabel.appendChild(readSpan);
+
+    } else {
+
+      const readLabel = document.createElement("label");
+      const displayRead = document.createElement("input");
+      const readSpan = document.createElement("span");
+      displayRead.classList.add("cover-content");
+      displayRead.setAttribute("type", "checkbox");
+      readLabel.classList.add("switch");
+      readSpan.classList.add("slider", "round")
+      readDelete.appendChild(readLabel);
+      readLabel.appendChild(displayRead);
+      readLabel.appendChild(readSpan);
+
+
+    }
+    
+    readDelete.appendChild(displayDelete);
 
     displayDelete.addEventListener("click", () => {
 
