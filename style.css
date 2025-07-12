@@ -62,7 +62,7 @@ dialog:open {
 
 dialog {
   animation: fade-out 0.7s ease-out;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -387,6 +387,7 @@ dialog::backdrop {
     
     display: flex;
     flex-direction: column;
+    max-width: 80%;
     
 
     
