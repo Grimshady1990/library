@@ -43,7 +43,8 @@ closeButton.addEventListener("click", () => {
   newEntries=[];
   document.querySelector("#radio-yes").checked=false;
   document.querySelector("#radio-no").checked=false;
-  
+  const resetForm = document.querySelector("#book-form");
+  resetForm.reset();
   
   
 });
