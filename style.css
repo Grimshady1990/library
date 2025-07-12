@@ -168,6 +168,21 @@ label {
 
 }
 
+fieldset {
+  border: transparent;
+  text-align: center;
+}
+
+input[type="radio"] {
+  transform: scale(200%);
+  box-shadow: none;
+  background-color: var(--text-color);
+}
+
+#radio-yes, #radio-no {
+  margin: 10px;
+}
+
 
 #grid-container {
   display: grid;

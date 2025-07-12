@@ -28,9 +28,15 @@ closeButton.addEventListener("click", () => {
   const valuePages = inputPages.value;
   const inputDesc = document.querySelector("#form_description");
   const valueDesc = inputDesc.value;
-  addNewBookToLibrary(valueTitle, valueAuthor, valuePages, valueDesc,)
+
+  const readInput = document.querySelector("input[name='radio-btn']:checked");
+  const readValue = readInput.value;
+  addNewBookToLibrary(valueTitle, valueAuthor, valuePages, valueDesc, readValue)
   displayNewBook();
   newEntries=[];
+  document.querySelector("#radio-yes").checked=false;
+  document.querySelector("#radio-no").checked=false;
+  
   
   
 });
