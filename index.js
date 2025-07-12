@@ -49,8 +49,8 @@ function addBookToLibrary(addTitle, addAuthor, addPages, addDescription) {
   myLibrary.push(this.title);
 }
 
-function addNewBookToLibrary(addTitle, addAuthor, addPages, addDescription) {
-  this.title = new Book(addTitle, addAuthor, addPages, addDescription);
+function addNewBookToLibrary(addTitle, addAuthor, addPages, addDescription, addRead) {
+  this.title = new Book(addTitle, addAuthor, addPages, addDescription, addRead);
   newEntries.push(this.title);
 }
 
@@ -163,6 +163,8 @@ function displayNewBook(){
     const frontCover = document.createElement("div")
     // **************************************************************
 
+    const readValue = document.querySelector("input[name='radio-btn']:checked").value;
+
     const displayTitle = document.createElement("div");
     const displayAuthor = document.createElement("div");
     const displayPage = document.createElement("div");
@@ -211,6 +213,8 @@ function displayNewBook(){
     readLabel.appendChild(displayRead);
     readLabel.appendChild(readSpan);
     readDelete.appendChild(displayDelete);
+
+    console.log(readValue);
     
 
     displayDelete.addEventListener("click", () => {
