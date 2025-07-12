@@ -19,6 +19,13 @@ closeButton.addEventListener("click", () => {
   
   event.preventDefault();
   dialog.close();
+
+  if (document.querySelector("#radio-yes").checked === false && document.querySelector("#radio-no").checked === false) {
+    alert("Have you read this book?");
+    dialog.showModal();
+
+  }
+  
   
   const inputTitle = document.querySelector("#form_title");
   const valueTitle = inputTitle.value;
@@ -265,6 +272,7 @@ function displayNewBook(){
       readDelete.appendChild(readLabel);
       readLabel.appendChild(displayRead);
       readLabel.appendChild(readSpan);
+      console.log(readValue);
 
 
     }
