@@ -122,8 +122,8 @@ function displayBook(){
     displayId.classList.add("cover-content");
     
     displayRead.setAttribute("type", "checkbox");
-    readLabel.classList.add("switch");
-    readSpan.classList.add("slider", "round")
+    readLabel.classList.add("switch-yes");
+    readSpan.classList.add("slider-yes", "round-yes")
     readDelete.setAttribute("id", "read-delete")
 
     document.body.appendChild(mainContainer);
@@ -171,9 +171,7 @@ function displayNewBook(){
     const displayDescription = document.createElement("div");
     const displayId = document.createElement("div");
     
-    const readLabel = document.createElement("label");
-    const displayRead = document.createElement("input");
-    const readSpan = document.createElement("span");
+    
     const displayDelete = document.createElement("button");
     const readDelete = document.createElement("div")
 
@@ -192,13 +190,11 @@ function displayNewBook(){
     displayTitle.classList.add("cover-content");
     displayAuthor.classList.add("cover-content");
     displayPage.classList.add("cover-content");
-    displayRead.classList.add("cover-content");
+    
     displayDescription.classList.add("cover-content");
     displayId.classList.add("cover-content");
     
-    displayRead.setAttribute("type", "checkbox");
-    readLabel.classList.add("switch");
-    readSpan.classList.add("slider", "round")
+    
     readDelete.setAttribute("id", "read-delete")
 
     document.body.appendChild(mainContainer);
@@ -209,13 +205,39 @@ function displayNewBook(){
     frontCover.appendChild(displayDescription);
     frontCover.appendChild(displayId);
     frontCover.appendChild(readDelete);
-    readDelete.appendChild(readLabel);
-    readLabel.appendChild(displayRead);
-    readLabel.appendChild(readSpan);
-    readDelete.appendChild(displayDelete);
-
-    console.log(readValue);
     
+   
+    
+
+    if (readValue === "yes") {
+      const readLabel = document.createElement("label");
+      const displayRead = document.createElement("input");
+      const readSpan = document.createElement("span");
+      displayRead.classList.add("cover-content");
+      displayRead.setAttribute("type", "checkbox");
+      readLabel.classList.add("switch-yes");
+      readSpan.classList.add("slider-yes", "round-yes")
+      readDelete.appendChild(readLabel);
+      readLabel.appendChild(displayRead);
+      readLabel.appendChild(readSpan);
+
+    } else {
+
+      const readLabel = document.createElement("label");
+      const displayRead = document.createElement("input");
+      const readSpan = document.createElement("span");
+      displayRead.classList.add("cover-content");
+      displayRead.setAttribute("type", "checkbox");
+      readLabel.classList.add("switch");
+      readSpan.classList.add("slider", "round")
+      readDelete.appendChild(readLabel);
+      readLabel.appendChild(displayRead);
+      readLabel.appendChild(readSpan);
+
+
+    }
+    
+    readDelete.appendChild(displayDelete);
 
     displayDelete.addEventListener("click", () => {
 
