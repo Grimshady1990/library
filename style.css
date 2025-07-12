@@ -244,6 +244,76 @@ label {
 
 }
 
+/* The switch - the box around the slider */
+.switch-yes {
+  position: relative;
+  display: flex;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch-yes input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-yes {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--text-color);
+  -webkit-transition: .4s;
+  transition: .4s;
+  
+
+}
+
+.slider-yes:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 30px;
+  bottom: 4px;
+  background-color: var(--secondary-bg-color);
+  -webkit-transition: .4s;
+  transition: .4s;
+  
+}
+
+input:checked+.slider-yes {
+  background-color: rgb(245, 85, 85);
+  
+}
+
+input:focus+.slider-yes {
+  box-shadow: 0 0 1px rgb(245, 85, 85);
+  
+}
+
+input:checked+.slider-yes:before {
+  -webkit-transform: translateX(-26px);
+  -ms-transform: translateX(-26px);
+  transform: translateX(-26px);
+  
+}
+
+/* Rounded sliders */
+.slider-yes.round-yes {
+  border-radius: 34px;
+
+}
+
+.slider-yes.round-yes:before {
+  border-radius: 50%;
+}
+
+
 .slider:before {
   position: absolute;
   content: "";
@@ -251,7 +321,7 @@ label {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--secondary-bg-color);
   -webkit-transition: .4s;
   transition: .4s;
   
