@@ -28,12 +28,10 @@ closeButton.addEventListener("click", () => {
   const valuePages = inputPages.value;
   const inputDesc = document.querySelector("#form_description");
   const valueDesc = inputDesc.value;
-  const inputRead = document.querySelector("#form_read");
-  const valueRead = inputRead.value;
-  addNewBookToLibrary(valueTitle, valueAuthor, valuePages, valueDesc, valueRead)
+  addNewBookToLibrary(valueTitle, valueAuthor, valuePages, valueDesc,)
   displayNewBook();
   newEntries=[];
-  console.log(newEntries)
+  
   
 });
 
@@ -46,23 +44,23 @@ function Book(title, author, pages, description, read) {
   this.id = crypto.randomUUID();
 }
 
-function addBookToLibrary(addTitle, addAuthor, addPages, addDescription, addRead) {
-  this.title = new Book(addTitle, addAuthor, addPages, addDescription, addRead);
+function addBookToLibrary(addTitle, addAuthor, addPages, addDescription) {
+  this.title = new Book(addTitle, addAuthor, addPages, addDescription,);
   myLibrary.push(this.title);
 }
 
-function addNewBookToLibrary(addTitle, addAuthor, addPages, addDescription, addRead) {
-  this.title = new Book(addTitle, addAuthor, addPages, addDescription, addRead);
+function addNewBookToLibrary(addTitle, addAuthor, addPages, addDescription) {
+  this.title = new Book(addTitle, addAuthor, addPages, addDescription);
   newEntries.push(this.title);
 }
 
-addBookToLibrary("Journeys Out of the Body", "Robert Monroe", 288, "Groundbreaking account of Monroe’s out-of-body experiences and consciousness exploration.", "on");
+addBookToLibrary("Journeys Out of the Body", "Robert Monroe", 288, "Groundbreaking account of Monroe’s out-of-body experiences and consciousness exploration.");
 
-addBookToLibrary("Raising Steam", "Terry Pratchett", 384, "Moist von Lipwig tackles industrial revolution on Discworld with steam locomotive.", "on");
+addBookToLibrary("Raising Steam", "Terry Pratchett", 384, "Moist von Lipwig tackles industrial revolution on Discworld with steam locomotive.");
 
-addBookToLibrary("The 5 AM Club", "Robin Sharma", 336, "routine to maximize productivity by waking at 5 AM for growth and discipline.", "on");
+addBookToLibrary("The 5 AM Club", "Robin Sharma", 336, "routine to maximize productivity by waking at 5 AM for growth and discipline.");
 
-addBookToLibrary("The Way of Zen", "Alan Watts", 256, "Explores Zen’s origins, principles, and practices in a clear, modern voice.", "off");
+addBookToLibrary("The Way of Zen", "Alan Watts", 256, "Explores Zen’s origins, principles, and practices in a clear, modern voice.");
 
 console.log(myLibrary);
 
@@ -95,42 +93,63 @@ function displayBook(){
     const displayTitle = document.createElement("div");
     const displayAuthor = document.createElement("div");
     const displayPage = document.createElement("div");
-    const displayRead = document.createElement("div");
     const displayDescription = document.createElement("div");
     const displayId = document.createElement("div");
+    
+    const readLabel = document.createElement("label");
+    const displayRead = document.createElement("input");
+    const readSpan = document.createElement("span");
     const displayDelete = document.createElement("button");
-    displayDelete.setAttribute("id", "delete-button");
+    const readDelete = document.createElement("div")
 
     displayTitle.textContent = `Title: ${book.title}`;
     displayAuthor.textContent = `Author: ${book.author}`;
     displayPage.textContent = `Page Count: ${book.pages}`;
-    displayRead.textContent = `Read: ${book.read}`;
+    
     displayDescription.textContent = `Description: ${book.description}`;
     displayId.textContent = `ID: ${book.id}`;
     displayDelete.textContent = "Delete"
 
     frontCover.setAttribute("id", "front-cover");
-
+    displayDelete.setAttribute("id", "delete-button");
+    displayDelete.setAttribute("data-id", `${book.id}`);
+    frontCover.setAttribute("data-id", `${book.id}`);
     displayTitle.classList.add("cover-content");
     displayAuthor.classList.add("cover-content");
     displayPage.classList.add("cover-content");
     displayRead.classList.add("cover-content");
     displayDescription.classList.add("cover-content");
     displayId.classList.add("cover-content");
-    displayDelete.classList.add("cover-content");
+    
+    displayRead.setAttribute("type", "checkbox");
+    readLabel.classList.add("switch");
+    readSpan.classList.add("slider", "round")
+    readDelete.setAttribute("id", "read-delete")
 
     document.body.appendChild(mainContainer);
     mainContainer.appendChild(frontCover);
     frontCover.appendChild(displayTitle);
     frontCover.appendChild(displayAuthor);
     frontCover.appendChild(displayPage);
-    frontCover.appendChild(displayRead);
     frontCover.appendChild(displayDescription);
     frontCover.appendChild(displayId);
-    frontCover.appendChild(displayDelete);
+    frontCover.appendChild(readDelete);
+    readDelete.appendChild(readLabel);
+    readLabel.appendChild(displayRead);
+    readLabel.appendChild(readSpan);
+    readDelete.appendChild(displayDelete);
+    
+
+    displayDelete.addEventListener("click", () => {
+
+        frontCover.remove();
+});
+    
   })
   
 }
+
+
 
 function displayNewBook(){
 
@@ -147,43 +166,59 @@ function displayNewBook(){
     const displayTitle = document.createElement("div");
     const displayAuthor = document.createElement("div");
     const displayPage = document.createElement("div");
-    const displayRead = document.createElement("div");
     const displayDescription = document.createElement("div");
     const displayId = document.createElement("div");
+    
+    const readLabel = document.createElement("label");
+    const displayRead = document.createElement("input");
+    const readSpan = document.createElement("span");
     const displayDelete = document.createElement("button");
-    displayDelete.setAttribute("id", "delete-button");
+    const readDelete = document.createElement("div")
 
     displayTitle.textContent = `Title: ${book.title}`;
     displayAuthor.textContent = `Author: ${book.author}`;
     displayPage.textContent = `Page Count: ${book.pages}`;
-    displayRead.textContent = `Read: ${book.read}`;
+    
     displayDescription.textContent = `Description: ${book.description}`;
     displayId.textContent = `ID: ${book.id}`;
     displayDelete.textContent = "Delete"
 
     frontCover.setAttribute("id", "front-cover");
-
+    displayDelete.setAttribute("id", "delete-button");
+    displayDelete.setAttribute("data-id", `${book.id}`);
+    frontCover.setAttribute("data-id", `${book.id}`);
     displayTitle.classList.add("cover-content");
     displayAuthor.classList.add("cover-content");
     displayPage.classList.add("cover-content");
     displayRead.classList.add("cover-content");
     displayDescription.classList.add("cover-content");
     displayId.classList.add("cover-content");
+    
+    displayRead.setAttribute("type", "checkbox");
+    readLabel.classList.add("switch");
+    readSpan.classList.add("slider", "round")
+    readDelete.setAttribute("id", "read-delete")
 
     document.body.appendChild(mainContainer);
     mainContainer.appendChild(frontCover);
     frontCover.appendChild(displayTitle);
     frontCover.appendChild(displayAuthor);
     frontCover.appendChild(displayPage);
-    frontCover.appendChild(displayRead);
     frontCover.appendChild(displayDescription);
     frontCover.appendChild(displayId);
-    frontCover.appendChild(displayDelete);
-    displayDelete.classList.add("cover-content");
+    frontCover.appendChild(readDelete);
+    readDelete.appendChild(readLabel);
+    readLabel.appendChild(displayRead);
+    readLabel.appendChild(readSpan);
+    readDelete.appendChild(displayDelete);
     
-  });
+
+    displayDelete.addEventListener("click", () => {
+
+        frontCover.remove();
+});
+})
 }
-  
 
 
 
