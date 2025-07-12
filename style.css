@@ -95,6 +95,11 @@ input[type=text], input[type=number]
    caret-color: transparent;
 }
 
+#delete-button:hover {
+  transition: 0.6s;
+  background-color: red;
+}
+
 textarea{
   width: 500px;
   border: none;
@@ -374,10 +379,6 @@ dialog::backdrop {
   backdrop-filter: blur(4px);
 }
 
-#delete-button:hover {
-  transition: 0.6s;
-  background-color: red;
-}
 
 @media(width < 900px) {
 
@@ -412,6 +413,25 @@ dialog::backdrop {
     width: 200px;
     
   }
+
+  #add-book:hover  {
+  transition: 0.1s;
+  background-color: var(--text-color);
+  color: black;
+
+}
+
+#submit-btn:hover{
+  transition: 0.1s;
+  background-color: var(--text-color);
+  color: black;
+
+}
+
+#delete-button:hover {
+  transition: 0.0s;
+  background-color: red;
+}
   
   #front-cover{
     margin: 0%;
