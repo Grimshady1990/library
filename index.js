@@ -15,25 +15,33 @@ showButton.addEventListener("click", () => {
   dialog.showModal();
 });
 
-closeButton.addEventListener("click", () => {
+closeButton.addEventListener("click", (event) => {
   
   event.preventDefault();
   dialog.close();
 
-  if (document.querySelector("#radio-yes").checked === false && document.querySelector("#radio-no").checked === false) {
-    alert("Have you read this book?");
+  const inputTitle = document.querySelector("#form_title");
+  const inputAuthor = document.querySelector("#form_author");
+  const inputPages = document.querySelector("#form_pages");
+  const inputDesc = document.querySelector("#form_description");
+  const resetForm = document.querySelector("#book-form");
+
+  if ((document.querySelector("#radio-yes").checked === false && document.querySelector("#radio-no").checked === false) || inputTitle.value === "" || inputAuthor.value === "" || inputPages.value === "" || inputDesc.value === "") {
+    alert("Please fill the entire form");
     dialog.showModal();
+    resetForm.reset();
+    return;
 
   }
   
   
-  const inputTitle = document.querySelector("#form_title");
+  
   const valueTitle = inputTitle.value;
-  const inputAuthor = document.querySelector("#form_author");
+  
   const valueAuthor = inputAuthor.value;
-  const inputPages = document.querySelector("#form_pages");
+  
   const valuePages = inputPages.value;
-  const inputDesc = document.querySelector("#form_description");
+  
   const valueDesc = inputDesc.value;
 
   const readInput = document.querySelector("input[name='radio-btn']:checked");
@@ -43,7 +51,7 @@ closeButton.addEventListener("click", () => {
   newEntries=[];
   document.querySelector("#radio-yes").checked=false;
   document.querySelector("#radio-no").checked=false;
-  const resetForm = document.querySelector("#book-form");
+  
   resetForm.reset();
   
   
