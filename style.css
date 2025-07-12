@@ -33,7 +33,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 120px;
+  padding: 50px 120px;
   box-shadow: 4px 8px 6px -2px var(--shadow-color);
 }
 
