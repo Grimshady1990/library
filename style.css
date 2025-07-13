@@ -1,17 +1,11 @@
 
 :root{
-
   --body-bg-color: rgb(46, 46, 46);
   --secondary-bg-color: rgb(29, 29, 29);
-  
   --shadow-color: rgba(136, 206, 136, 0.548);
   --text-color: rgb(136, 206, 136);
   --del-btn-color: rgb(71, 56, 56);
-
   --del-text: rgb(255, 255, 255);
-
-
-
 }
 
 html * {
@@ -112,24 +106,21 @@ textarea{
  .no-spinners {
          appearance: textfield;
       }
-      
       .no-spinners::-webkit-outer-spin-button,
       .no-spinners::-webkit-inner-spin-button {
          -webkit-appearance: none;
          margin: 0;
       }
 
-
 input:focus, textarea:focus {
-
   box-shadow: 4px 8px 6px -2px var(--shadow-color);
   outline: none;
-
 }
 
 label {
   font-size: 30px;
 }
+
 #read-delete {
   height: 300px;
   display: flex;
@@ -139,14 +130,11 @@ label {
 }
 
 .cover-content {
-
   background-color: var(--body-bg-color);
   padding: 15px;
   margin: 20px 40px;
   border-radius: 20px;
-
   box-shadow: 4px 8px 6px -2px var(--shadow-color);
-
 }
 
 #add-book, #submit-btn {
@@ -163,14 +151,12 @@ label {
   transition: 0.6s;
   background-color: var(--text-color);
   color: black;
-
 }
 
 #submit-btn:hover{
   transition: 0.6s;
   background-color: var(--text-color);
   color: black;
-
 }
 
 fieldset {
@@ -188,21 +174,17 @@ input[type="radio"] {
   margin: 10px;
 }
 
-
 #grid-container {
   display: grid;
-  
   margin: 20px;
   padding: 20px;
   grid-template-columns: repeat(auto-fit, minmax(500px, 150px));
   gap: 20px;
-
 }
 
 #front-cover {
   height: 800px;
   width: 500px;
-  
   background-color: var(--secondary-bg-color);
   display: flex;
   gap: 10px;
@@ -220,7 +202,6 @@ input[type="radio"] {
 
 #form_image {
   margin-left: 200px;
-
 }
 
 #delete-button {
@@ -234,7 +215,6 @@ input[type="radio"] {
   color: var(--del-text);
 }
 
-/* The switch - the box around the slider */
 .switch {
   position: relative;
   display: flex;
@@ -242,14 +222,12 @@ input[type="radio"] {
   height: 34px;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -260,11 +238,8 @@ input[type="radio"] {
   background-color: rgb(245, 85, 85);
   -webkit-transition: .4s;
   transition: .4s;
-  
-
 }
 
-/* The switch - the box around the slider */
 .switch-yes {
   position: relative;
   display: flex;
@@ -272,7 +247,6 @@ input[type="radio"] {
   height: 34px;
 }
 
-/* Hide default HTML checkbox */
 .switch-yes input {
   opacity: 0;
   width: 0;
@@ -289,8 +263,6 @@ input[type="radio"] {
   background-color: var(--text-color);
   -webkit-transition: .4s;
   transition: .4s;
-  
-
 }
 
 .slider-yes:before {
@@ -303,36 +275,29 @@ input[type="radio"] {
   background-color: var(--secondary-bg-color);
   -webkit-transition: .4s;
   transition: .4s;
-  
 }
 
 input:checked+.slider-yes {
   background-color: rgb(245, 85, 85);
-  
 }
 
 input:focus+.slider-yes {
   box-shadow: 0 0 1px rgb(245, 85, 85);
-  
 }
 
 input:checked+.slider-yes:before {
   -webkit-transform: translateX(-26px);
   -ms-transform: translateX(-26px);
   transform: translateX(-26px);
-  
 }
 
-/* Rounded sliders */
 .slider-yes.round-yes {
   border-radius: 34px;
-
 }
 
 .slider-yes.round-yes:before {
   border-radius: 50%;
 }
-
 
 .slider:before {
   position: absolute;
@@ -344,30 +309,25 @@ input:checked+.slider-yes:before {
   background-color: var(--secondary-bg-color);
   -webkit-transition: .4s;
   transition: .4s;
-  
 }
 
 input:checked+.slider {
   background-color: var(--text-color);
-  
 }
 
 input:focus+.slider {
   box-shadow: 0 0 1px var(--text-color);
-  
 }
 
 input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
-  
 }
 
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
-
 }
 
 .slider.round:before {
@@ -375,82 +335,59 @@ input:checked+.slider:before {
 }
 
 dialog::backdrop {
-
   backdrop-filter: blur(4px);
 }
-
 
 @media(width < 900px) {
 
   body{
-    
-    
-    
     display: flex;
     flex-direction: column;
     max-width: 80%;
-    
-
-    
   }
 
   #header-bar {
-    
     height: 200px;
     width: 115%;
     padding: 0 20px;
-
     justify-content: space-evenly;
-    
-    
-    
-    
-    
-    
   }
 
   #add-book{
     width: 200px;
-    
   }
 
   #add-book:hover  {
   transition: 0.1s;
   background-color: var(--text-color);
   color: black;
+  }
 
-}
-
-#submit-btn:hover{
+  #submit-btn:hover{
   transition: 0.1s;
   background-color: var(--text-color);
   color: black;
+  }
 
-}
-
-#delete-button:hover {
+  #delete-button:hover {
   transition: 0.0s;
   background-color: red;
-}
+  }
   
   #front-cover{
     margin: 0%;
-    
   }
 
   dialog {
-
   position: fixed;
   animation: fade-out 0.7s ease-out;
-  
   top: 50%;
   left:50%;
-  
   background-color: var(--body-bg-color);
   padding: 50px 50px;
 }
-input[type=text], input[type=number]
-{
+
+  input[type=text], input[type=number] {
   border: none;
   font-size: 30px;
    height: 40px;
@@ -461,19 +398,15 @@ input[type=text], input[type=number]
    caret-color: transparent;
 }
 
-textarea{
+  textarea{
   width: 400px;
   border: none;
   font-size: 30px;
   caret-color: transparent;
   background-color: var(--secondary-bg-color);
+  }
 
-
-}
-
-* {
-
+  * {
 -webkit-tap-highlight-color: transparent;
-}
-
+  }
 }
