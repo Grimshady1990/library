@@ -31,9 +31,9 @@
             <label for="form_author">Author:</label>
             <input type="text" id="form_author" name="form_author" required>
             <label for="form_pages">Page Count:</label>
-            <input type="number" id="form_pages" name="form_pages" class="no-spinners">
+            <input type="number" id="form_pages" name="form_pages" class="no-spinners" required>
             <label for="form_description">Description:</label>
-            <textarea name="form_description" id="form_description" rows="5" cols="30"></textarea>
+            <textarea name="form_description" id="form_description" rows="5" cols="30" required></textarea>
             <fieldset>
                 <legend>
                     Have you read this book?
@@ -43,7 +43,7 @@
                     <label for="radio-no">No</label>
                     <input type="radio" id="radio-no" name='radio-btn' value="no" required>                
             </fieldset>
-            <button id="submit-btn" type="button" onclick="displayNewBook()">Submit</button>
+            <button id="submit-btn" type="button" onclick="displayBook()">Submit</button>
         </form>
     </dialog>
     

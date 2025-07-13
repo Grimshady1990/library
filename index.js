@@ -1,5 +1,5 @@
 const myLibrary = [];
-let newEntries = [];
+
 
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("#add-book");
@@ -29,7 +29,7 @@ closeButton.addEventListener("click", (event) => {
   if ((document.querySelector("#radio-yes").checked === false && document.querySelector("#radio-no").checked === false) || inputTitle.value === "" || inputAuthor.value === "" || inputPages.value === "" || inputDesc.value === "") {
     alert("Please fill the entire form");
     dialog.showModal();
-    resetForm.reset();
+    
     return;
 
   }
@@ -46,9 +46,9 @@ closeButton.addEventListener("click", (event) => {
 
   const readInput = document.querySelector("input[name='radio-btn']:checked");
   const readValue = readInput.value;
-  addNewBookToLibrary(valueTitle, valueAuthor, valuePages, valueDesc, readValue)
-  displayNewBook();
-  newEntries=[];
+  addBookToLibrary(valueTitle, valueAuthor, valuePages, valueDesc, readValue)
+  displayBook();
+  
   document.querySelector("#radio-yes").checked=false;
   document.querySelector("#radio-no").checked=false;
   
@@ -68,7 +68,8 @@ function Book(title, author, pages, description, read) {
 
 function addBookToLibrary(addTitle, addAuthor, addPages, addDescription, addRead) {
   this.title = new Book(addTitle, addAuthor, addPages, addDescription, addRead);
-  myLibrary.push(this.title);
+  
+  myLibrary.unshift(this.title);
 }
 
 function addNewBookToLibrary(addTitle, addAuthor, addPages, addDescription, addRead) {
@@ -103,6 +104,8 @@ displayBookTest();
 //****************************************
 
 function displayBook(){
+
+  removeElementsByClass("front-cover");
   
   myLibrary.forEach(book => {
   
@@ -139,6 +142,8 @@ function displayBook(){
     displayTitle.classList.add("cover-content");
     displayAuthor.classList.add("cover-content");
     displayPage.classList.add("cover-content");
+    frontCover.classList.add("front-cover")
+    displayDelete.classList.add("display-delete");
     
     displayDescription.classList.add("cover-content");
     displayId.classList.add("cover-content");
@@ -195,6 +200,13 @@ function displayBook(){
     
   })
   
+}
+
+function removeElementsByClass(className){
+    const elements = document.getElementsByClassName(className);
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
 }
 
 
